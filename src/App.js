@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import AnnotationChart from "./components/AnnotationChart";
+import BarStackChart from "./components/BarStackChart";
+import BarsChart from "./components/BarsChart";
+import CurvesChart from "./components/CurvesChart";
 
 function App() {
+  const containerStyle = {
+    width: 830,
+    height: 480,
+    position: "relative",
+    display: "flex",
+    margin: "4rem auto ",
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={containerStyle}>
+        <BarStackChart />
+      </div>
+      <div style={containerStyle}>
+        <CurvesChart />
+      </div>
+      <div style={containerStyle}>
+        <BarsChart />
+      </div>
+      <div style={containerStyle}>
+        <AnnotationChart />
+      </div>
+    </>
   );
 }
 
